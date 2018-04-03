@@ -5,10 +5,10 @@
 
 ## Project: Build a Traffic Sign Recognition Classifier
 
-In this notebook, a template is provided for you to implement your functionality in stages, which is required to successfully complete this project. If additional code is required that cannot be included in the notebook, be sure that the Python code is successfully imported and included in your submission if necessary. 
+In this notebook, a template is provided for you to implement your functionality in stages, which is required to successfully complete this project. If additional code is required that cannot be included in the notebook, be sure that the Python code is successfully imported and included in your submission if necessary.
 
 > **Note**: Once you have completed all of the code implementations, you need to finalize your work by exporting the iPython Notebook as an HTML document. Before exporting the notebook to html, all of the code cells need to have been run so that reviewers can see the final implementation and output. You can then export the notebook by using the menu above and navigating to  \n",
-    "**File -> Download as -> HTML (.html)**. Include the finished document along with this notebook as your submission. 
+    "**File -> Download as -> HTML (.html)**. Include the finished document along with this notebook as your submission.
 
 In addition to implementing code, there is a writeup to complete. The writeup should be completed in a separate file, which can be either a markdown file or a pdf document. There is a [write up template](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_template.md) that can be used to guide the writing process. Completing the code template and writeup template will cover all of the [rubric points](https://review.udacity.com/#!/rubrics/481/view) for this project.
 
@@ -53,14 +53,14 @@ with open(validation_file, mode='rb') as f:
     valid = pickle.load(f)
 with open(testing_file, mode='rb') as f:
     test = pickle.load(f)
-    
+
 X_train, y_train = train['features'], train['labels']
 X_valid, y_valid = valid['features'], valid['labels']
 X_test, y_test = test['features'], test['labels']
 ```
 
     Packages has been Loaded
-    
+
 
 
 ```python
@@ -72,13 +72,13 @@ print("Validation Set: {} samples".format(len(X_valid)))
 print("Test Set:       {} samples".format(len(X_test)))
 ```
 
-    
+
     Image Shape: (32, 32, 3)
-    
+
     Training Set:   34799 samples
     Validation Set: 4410 samples
     Test Set:       12630 samples
-    
+
 
 ---
 
@@ -91,13 +91,13 @@ The pickled data is a dictionary with 4 key/value pairs:
 - `'sizes'` is a list containing tuples, (width, height) representing the original width and height the image.
 - `'coords'` is a list containing tuples, (x1, y1, x2, y2) representing coordinates of a bounding box around the sign in the image. **THESE COORDINATES ASSUME THE ORIGINAL IMAGE. THE PICKLED DATA CONTAINS RESIZED VERSIONS (32 by 32) OF THESE IMAGES**
 
-Complete the basic data summary below. Use python, numpy and/or pandas methods to calculate the data summary rather than hard coding the results. For example, the [pandas shape method](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.shape.html) might be useful for calculating some of the summary results. 
+Complete the basic data summary below. Use python, numpy and/or pandas methods to calculate the data summary rather than hard coding the results. For example, the [pandas shape method](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.shape.html) might be useful for calculating some of the summary results.
 
 ### Provide a Basic Summary of the Data Set Using Python, Numpy and/or Pandas
 
 
 ```python
-### Replace each question mark with the appropriate value. 
+### Replace each question mark with the appropriate value.
 ### Use python, pandas or numpy methods rather than hard coding the results
 
 # TODO: Number of training examples
@@ -129,11 +129,11 @@ print("Number of classes =", n_classes)
     Number of validation examples = 4410
     Image data shape = (32, 32, 3)
     Number of classes = 43
-    
+
 
 ### Include an exploratory visualization of the dataset
 
-Visualize the German Traffic Signs Dataset using the pickled file(s). This is open ended, suggestions include: plotting traffic sign images, plotting the count of each sign, etc. 
+Visualize the German Traffic Signs Dataset using the pickled file(s). This is open ended, suggestions include: plotting traffic sign images, plotting the count of each sign, etc.
 
 The [Matplotlib](http://matplotlib.org/) [examples](http://matplotlib.org/examples/index.html) and [gallery](http://matplotlib.org/gallery.html) pages are a great resource for doing visualizations in Python.
 
@@ -189,7 +189,7 @@ plt.show()
 ```
 
 
-![png](output_11_0.png)
+![png](readme-pics/output_11_0.png)
 
 
 
@@ -228,7 +228,7 @@ with open('signnames.csv', 'r') as f:
     reader = csv.reader(f)
     next(reader, None)
     sign_names = list(reader)
-    
+
 labels = np.unique(y_train)
 for label in labels:
     label_indices = np.where(y_train==label)[0]
@@ -307,9 +307,9 @@ for label in labels:
 
 Design and implement a deep learning model that learns to recognize traffic signs. Train and test your model on the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset).
 
-The LeNet-5 implementation shown in the [classroom](https://classroom.udacity.com/nanodegrees/nd013/parts/fbf77062-5703-404e-b60c-95b78b2f3f9e/modules/6df7ae49-c61c-4bb2-a23e-6527e69209ec/lessons/601ae704-1035-4287-8b11-e2c2716217ad/concepts/d4aca031-508f-4e0b-b493-e7b706120f81) at the end of the CNN lesson is a solid starting point. You'll have to change the number of classes and possibly the preprocessing, but aside from that it's plug and play! 
+The LeNet-5 implementation shown in the [classroom](https://classroom.udacity.com/nanodegrees/nd013/parts/fbf77062-5703-404e-b60c-95b78b2f3f9e/modules/6df7ae49-c61c-4bb2-a23e-6527e69209ec/lessons/601ae704-1035-4287-8b11-e2c2716217ad/concepts/d4aca031-508f-4e0b-b493-e7b706120f81) at the end of the CNN lesson is a solid starting point. You'll have to change the number of classes and possibly the preprocessing, but aside from that it's plug and play!
 
-With the LeNet-5 solution from the lecture, you should expect a validation set accuracy of about 0.89. To meet specifications, the validation set accuracy will need to be at least 0.93. It is possible to get an even higher accuracy, but 0.93 is the minimum for a successful project submission. 
+With the LeNet-5 solution from the lecture, you should expect a validation set accuracy of about 0.89. To meet specifications, the validation set accuracy will need to be at least 0.93. It is possible to get an even higher accuracy, but 0.93 is the minimum for a successful project submission.
 
 There are various aspects to consider when thinking about this problem:
 
@@ -322,9 +322,9 @@ Here is an example of a [published baseline model on this problem](http://yann.l
 
 ### Pre-process the Data Set (normalization, grayscale, etc.)
 
-Minimally, the image data should be normalized so that the data has mean zero and equal variance. For image data, `(pixel - 128)/ 128` is a quick way to approximately normalize the data and can be used in this project. 
+Minimally, the image data should be normalized so that the data has mean zero and equal variance. For image data, `(pixel - 128)/ 128` is a quick way to approximately normalize the data and can be used in this project.
 
-Other pre-processing steps are optional. You can try different techniques to see if it improves performance. 
+Other pre-processing steps are optional. You can try different techniques to see if it improves performance.
 
 Use the code cell (or multiple code cells, if necessary) to implement the first step of your project.
 
@@ -352,11 +352,11 @@ https://goo.gl/HaHRS4
 def equalize_histogram(image):
     image = image.astype(np.uint8)
     image_yuv = cv2.cvtColor(image, cv2.COLOR_BGR2YUV)
-    
+
     # equalize the histogram of the Y channel
     clahe = cv2.createCLAHE(clipLimit=10.0, tileGridSize=(8,8))
     image_yuv[:,:,0] = clahe.apply(image_yuv[:,:,0])
-    
+
     # convert the YUV image back to RGB format
     image_output = cv2.cvtColor(image_yuv, cv2.COLOR_YUV2BGR)
     return image_output
@@ -368,8 +368,8 @@ def equalize_histogram(image):
 
   (i)equalize_histogram(image) for each image in X
   (ii)Linear image normalisation
-  
-  
+
+
 Consider how a neural network learns its weights. C(NN)s learn by continually adding gradient error vectors (multiplied by a learning rate) computed from backpropagation to various weight matrices throughout the network as training examples are passed through.
 
 The thing to notice here is the "multiplied by a learning rate".
@@ -470,7 +470,7 @@ The German Traffic Sign Database is very nonuniform in manner, which means some 
 3.Affine transformation - models perspective distortion effect ()
 
 4.Brightness variation - models variation of brightness level for original dataset
-their combinations 
+their combinations
 
 The augmented dataset can be obtained in two ways:
 
@@ -513,7 +513,7 @@ def translation(X):
     return result
 ```
 
-*affine_transform(X) - applies affine transform from skimage.transform with 
+*affine_transform(X) - applies affine transform from skimage.transform with
 randomly chosen parameters for shear angle and scale*
 
 
@@ -687,7 +687,7 @@ label_train_list = []
 
 ##### For Creating a Balanced Dataset
 
-#### Unbalanced Set Augmentation. 
+#### Unbalanced Set Augmentation.
 I randomly apply the transformations listed above to each element of the original dataset and stack them together (function set_augment). The augmented dataset contains two times more images than the original one, i.e. its shape(69598, 32, 32, 3) and has the same distribution of sign images across the sign types.
 
 #### Balanced Set Augmentation
@@ -716,7 +716,7 @@ print('Images are preprocessed.')
     X_valid processing: done
     X_test processing: done
     Images are preprocessed.
-    
+
 
 ### Model Architecture
 ![Capture.PNG](attachment:Capture.PNG)
@@ -726,7 +726,7 @@ print('Images are preprocessed.')
 
 ```python
 def Convolution_Network_three_stage(x, keep_prob):    
-    
+
     mu = 0
     sigma = 0.1    
     f1_h = 5
@@ -749,94 +749,94 @@ def Convolution_Network_three_stage(x, keep_prob):
         'bfc1': tf.Variable(tf.zeros([688])),
         'bfc2': tf.Variable(tf.zeros([86])),
         'bfc3': tf.Variable(tf.zeros([43]))}
-    
+
     kp = 2
-    
+
     strides = [1, 1, 1, 1];
-    
-    # Layer 1: Convolutional. 
-    # Input = 32x32x3. Filters: 5x5x18. 
-    # Output = 28x28x18. 
+
+    # Layer 1: Convolutional.
+    # Input = 32x32x3. Filters: 5x5x18.
+    # Output = 28x28x18.
     # ReLU Activation.
-    
+
     conv1 = tf.nn.conv2d(x, W['wc1'], strides=strides, padding='VALID')
     conv1 = tf.nn.bias_add(conv1, b['bc1'])
     conv1 = tf.nn.relu(conv1)
 
-    # Max Pooling. 
-    #Input = 28x28x18. 
+    # Max Pooling.
+    #Input = 28x28x18.
     #Output = 14x14x18.
-    
+
     conv1 = tf.nn.max_pool(conv1, [1, kp, kp, 1], [1, kp, kp, 1], padding='SAME')
-    
-    # Layer 2: Convolutional. 
-    # Input = 14x14x18. 
-    # Filters: 3x3x3. 
-    # Output = 12x12x48. 
+
+    # Layer 2: Convolutional.
+    # Input = 14x14x18.
+    # Filters: 3x3x3.
+    # Output = 12x12x48.
     # ReLU Activation.
-    
+
     conv2 = tf.nn.conv2d(conv1, W['wc2'], strides=strides, padding='VALID')
     conv2 = tf.nn.bias_add(conv2, b['bc2'])
     conv2 = tf.nn.relu(conv2)
-    
-    # Max Pooling. 
-    # Input = 12x12x48. 
+
+    # Max Pooling.
+    # Input = 12x12x48.
     # Output = 6x6x48.
-    
+
     conv2 = tf.nn.max_pool(conv2, [1, kp, kp, 1], [1, kp, kp, 1], padding='SAME')
-    
-    # Layer 3: Convolutional. 
-    # Input = 6x6x48. 
-    # Filters: 3x3x3. 
-    # Output = 4x4x96. 
+
+    # Layer 3: Convolutional.
+    # Input = 6x6x48.
+    # Filters: 3x3x3.
+    # Output = 4x4x96.
     # ReLU Activation.
-    
+
     conv3 = tf.nn.conv2d(conv2, W['wc3'], strides=strides, padding='VALID')
     conv3 = tf.nn.bias_add(conv3, b['bc3'])
     conv3 = tf.nn.relu(conv3)
-    
-    # Max Pooling. 
-    # Input = 4x4x96. 
+
+    # Max Pooling.
+    # Input = 4x4x96.
     # Output = 2x2x96.
-    
+
     conv3 = tf.nn.max_pool(conv3, [1, kp, kp, 1], [1, kp, kp, 1], padding='SAME')
-    
-    # Flatten. 
-    # Input = 2x2x96 and 6x6x48 and 14x14x18. 
+
+    # Flatten.
+    # Input = 2x2x96 and 6x6x48 and 14x14x18.
     # Output = 5640.
-    
+
     fc1_1 = tf.contrib.layers.flatten(conv1)
     fc1_2 = tf.contrib.layers.flatten(conv2)
     fc1_3 = tf.contrib.layers.flatten(conv3)
     fc1 = tf.concat(1, [fc1_1, fc1_2, fc1_3])
-    
-    # Layer 4: Fully Connected. 
-    # Input = 5640. 
-    # Output = 688. 
+
+    # Layer 4: Fully Connected.
+    # Input = 5640.
+    # Output = 688.
     # ReLU Activation.
-    
+
     fc1 = tf.add(tf.matmul(fc1, W['wfc1']), b['bfc1'])
     fc1 = tf.nn.relu(fc1)
-    
+
     # Dropout
     fc1 = tf.nn.dropout(fc1, keep_prob=keep_prob)
-    
-    # Layer 5: Fully Connected. 
-    # Input = 688. 
-    # Output = 86. 
+
+    # Layer 5: Fully Connected.
+    # Input = 688.
+    # Output = 86.
     # ReLU Activation.
-    
-    fc2 = tf.add(tf.matmul(fc1, W['wfc2']), b['bfc2']) 
+
+    fc2 = tf.add(tf.matmul(fc1, W['wfc2']), b['bfc2'])
     fc2 = tf.nn.relu(fc2)
-    
+
     # Dropout
     fc2 = tf.nn.dropout(fc2, keep_prob=keep_prob)
-    
-    # Layer 6: Output. 
+
+    # Layer 6: Output.
     # Input = 86.
     # Output = 43.
     logits = tf.add(tf.matmul(fc2, W['wfc3']), b['bfc3'])
-    
+
     return logits
 ```
 
@@ -849,7 +849,7 @@ sets imply underfitting. A high accuracy on the training set but low accuracy on
 ```python
 ### Train your model here.
 ### Calculate and report the accuracy on the training and validation set.
-### Once a final model architecture is selected, 
+### Once a final model architecture is selected,
 ### the accuracy on the test set should be calculated and reported as well.
 ### Feel free to use as many code cells as needed.
 
@@ -904,7 +904,7 @@ training_operation = optimizer.minimize(loss_operation)
 
 
 ```python
-correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(one_hot_y, 1)) 
+correct_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(one_hot_y, 1))
 accuracy_operation = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 saver = tf.train.Saver()
 
@@ -923,7 +923,7 @@ def evaluate(X_data, y_data):
 ```python
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
-    
+
     print("The Training is in progression...")
     print()
     val = []
@@ -938,13 +938,13 @@ with tf.Session() as sess:
         y_train_aug = label_train_list[index]
         X_train_aug, y_train_aug = shuffle(X_train_aug, y_train_aug)
         num_examples = len(X_train_aug)
-        
+
         if (i == 60):
             rate = 0.0001
             print("Learning rate: ", rate)
         elif (i == 80):
             rate = 0.00001
-            print("Learning rate: ", rate) 
+            print("Learning rate: ", rate)
 
         for offset in range(0, num_examples, BATCH_SIZE):
             end = offset + BATCH_SIZE
@@ -957,523 +957,523 @@ with tf.Session() as sess:
         valid_acc_batch.append(validation_accuracy)
         validation_accuracy = evaluate(X_valid, y_valid)
         train.append(train_accuracy)
-        
-        
+
+
         print("Train Accuracy = {:.3f}".format(train_accuracy*100)+'%')
         print("Validation Accuracy = {:.3f}".format(validation_accuracy*100)+'%')
         print("EPOCH {} ...".format(i+1))
         print()   
-        
+
     saver.save(sess, './Three_stages_aug_rgb')
     print("Model is saved")
 ```
 
     The Training is in progression...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 63.999%
     Validation Accuracy = 80.930%
     EPOCH 1 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 74.847%
     Validation Accuracy = 92.925%
     EPOCH 2 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 83.375%
     Validation Accuracy = 94.308%
     EPOCH 3 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 86.658%
     Validation Accuracy = 95.646%
     EPOCH 4 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 89.642%
     Validation Accuracy = 96.440%
     EPOCH 5 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 90.556%
     Validation Accuracy = 96.939%
     EPOCH 6 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 89.852%
     Validation Accuracy = 97.052%
     EPOCH 7 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 92.977%
     Validation Accuracy = 97.324%
     EPOCH 8 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 94.200%
     Validation Accuracy = 96.939%
     EPOCH 9 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 95.702%
     Validation Accuracy = 97.823%
     EPOCH 10 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 94.392%
     Validation Accuracy = 97.937%
     EPOCH 11 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 95.089%
     Validation Accuracy = 97.823%
     EPOCH 12 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 95.794%
     Validation Accuracy = 97.483%
     EPOCH 13 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 93.641%
     Validation Accuracy = 97.755%
     EPOCH 14 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 96.353%
     Validation Accuracy = 97.732%
     EPOCH 15 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 96.168%
     Validation Accuracy = 98.163%
     EPOCH 16 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 97.040%
     Validation Accuracy = 97.778%
     EPOCH 17 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 97.432%
     Validation Accuracy = 98.186%
     EPOCH 18 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 95.748%
     Validation Accuracy = 98.481%
     EPOCH 19 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 95.992%
     Validation Accuracy = 97.891%
     EPOCH 20 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 96.458%
     Validation Accuracy = 97.483%
     EPOCH 21 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 96.353%
     Validation Accuracy = 97.415%
     EPOCH 22 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 97.032%
     Validation Accuracy = 97.914%
     EPOCH 23 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 97.029%
     Validation Accuracy = 97.937%
     EPOCH 24 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 97.836%
     Validation Accuracy = 97.959%
     EPOCH 25 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 97.523%
     Validation Accuracy = 97.800%
     EPOCH 26 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.145%
     Validation Accuracy = 97.846%
     EPOCH 27 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.006%
     Validation Accuracy = 98.345%
     EPOCH 28 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 97.089%
     Validation Accuracy = 98.481%
     EPOCH 29 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 97.713%
     Validation Accuracy = 98.231%
     EPOCH 30 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.355%
     Validation Accuracy = 98.345%
     EPOCH 31 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 97.219%
     Validation Accuracy = 98.594%
     EPOCH 32 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.019%
     Validation Accuracy = 97.528%
     EPOCH 33 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.070%
     Validation Accuracy = 97.891%
     EPOCH 34 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.415%
     Validation Accuracy = 98.345%
     EPOCH 35 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 97.379%
     Validation Accuracy = 98.435%
     EPOCH 36 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.111%
     Validation Accuracy = 98.231%
     EPOCH 37 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 97.964%
     Validation Accuracy = 98.571%
     EPOCH 38 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.504%
     Validation Accuracy = 98.707%
     EPOCH 39 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 97.950%
     Validation Accuracy = 98.639%
     EPOCH 40 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.082%
     Validation Accuracy = 98.458%
     EPOCH 41 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.256%
     Validation Accuracy = 98.073%
     EPOCH 42 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.555%
     Validation Accuracy = 98.662%
     EPOCH 43 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.507%
     Validation Accuracy = 98.231%
     EPOCH 44 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 97.767%
     Validation Accuracy = 98.571%
     EPOCH 45 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.667%
     Validation Accuracy = 98.073%
     EPOCH 46 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 98.113%
     Validation Accuracy = 98.390%
     EPOCH 47 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.315%
     Validation Accuracy = 98.254%
     EPOCH 48 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.685%
     Validation Accuracy = 98.005%
     EPOCH 49 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.960%
     Validation Accuracy = 98.413%
     EPOCH 50 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.159%
     Validation Accuracy = 98.390%
     EPOCH 51 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.101%
     Validation Accuracy = 98.186%
     EPOCH 52 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.329%
     Validation Accuracy = 98.435%
     EPOCH 53 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.430%
     Validation Accuracy = 98.503%
     EPOCH 54 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.231%
     Validation Accuracy = 98.163%
     EPOCH 55 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.955%
     Validation Accuracy = 98.163%
     EPOCH 56 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.122%
     Validation Accuracy = 98.254%
     EPOCH 57 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.305%
     Validation Accuracy = 98.345%
     EPOCH 58 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.247%
     Validation Accuracy = 98.571%
     EPOCH 59 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 98.258%
     Validation Accuracy = 98.413%
     EPOCH 60 ...
-    
+
     This is not a balanced dataset:
     Learning rate:  0.0001
     Train Accuracy = 98.701%
     Validation Accuracy = 98.503%
     EPOCH 61 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.856%
     Validation Accuracy = 98.390%
     EPOCH 62 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 98.967%
     Validation Accuracy = 98.481%
     EPOCH 63 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.259%
     Validation Accuracy = 98.481%
     EPOCH 64 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 98.747%
     Validation Accuracy = 98.662%
     EPOCH 65 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 98.919%
     Validation Accuracy = 98.594%
     EPOCH 66 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.486%
     Validation Accuracy = 98.526%
     EPOCH 67 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.536%
     Validation Accuracy = 98.526%
     EPOCH 68 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.570%
     Validation Accuracy = 98.549%
     EPOCH 69 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 98.995%
     Validation Accuracy = 98.639%
     EPOCH 70 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 99.054%
     Validation Accuracy = 98.707%
     EPOCH 71 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.616%
     Validation Accuracy = 98.617%
     EPOCH 72 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.141%
     Validation Accuracy = 98.549%
     EPOCH 73 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.443%
     Validation Accuracy = 98.526%
     EPOCH 74 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.468%
     Validation Accuracy = 98.413%
     EPOCH 75 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.553%
     Validation Accuracy = 98.435%
     EPOCH 76 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.654%
     Validation Accuracy = 98.526%
     EPOCH 77 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.250%
     Validation Accuracy = 98.639%
     EPOCH 78 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.570%
     Validation Accuracy = 98.549%
     EPOCH 79 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 99.087%
     Validation Accuracy = 98.730%
     EPOCH 80 ...
-    
+
     This is not a balanced dataset:
     Learning rate:  1e-05
     Train Accuracy = 99.477%
     Validation Accuracy = 98.639%
     EPOCH 81 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.615%
     Validation Accuracy = 98.639%
     EPOCH 82 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.267%
     Validation Accuracy = 98.549%
     EPOCH 83 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.651%
     Validation Accuracy = 98.571%
     EPOCH 84 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 99.118%
     Validation Accuracy = 98.685%
     EPOCH 85 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 99.142%
     Validation Accuracy = 98.730%
     EPOCH 86 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.236%
     Validation Accuracy = 98.594%
     EPOCH 87 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 99.144%
     Validation Accuracy = 98.685%
     EPOCH 88 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.644%
     Validation Accuracy = 98.662%
     EPOCH 89 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.560%
     Validation Accuracy = 98.617%
     EPOCH 90 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.579%
     Validation Accuracy = 98.617%
     EPOCH 91 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.290%
     Validation Accuracy = 98.594%
     EPOCH 92 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 99.113%
     Validation Accuracy = 98.639%
     EPOCH 93 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.667%
     Validation Accuracy = 98.662%
     EPOCH 94 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.677%
     Validation Accuracy = 98.639%
     EPOCH 95 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.296%
     Validation Accuracy = 98.639%
     EPOCH 96 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.322%
     Validation Accuracy = 98.571%
     EPOCH 97 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.328%
     Validation Accuracy = 98.549%
     EPOCH 98 ...
-    
+
     This is a Balanced dataset:
     Train Accuracy = 99.120%
     Validation Accuracy = 98.662%
     EPOCH 99 ...
-    
+
     This is not a balanced dataset:
     Train Accuracy = 99.335%
     Validation Accuracy = 98.662%
     EPOCH 100 ...
-    
+
     Model is saved
-    
+
 
 
 ```python
@@ -1485,7 +1485,7 @@ with tf.Session() as sess:
 ```
 
     Test Accuracy = 97.680%
-    
+
 
 
 ```python
@@ -1535,7 +1535,7 @@ for i, image in enumerate(images):
     temp = np.copy(image)
     temp = cv2.cvtColor(temp, cv2.COLOR_BGR2RGB)
     images[i] = np.expand_dims(cv2.resize(temp, (32, 32)), axis=0)
-    
+
 im_data = np.vstack(images)
 for i, image in enumerate(im_data):
     plt.figure()
@@ -1638,70 +1638,70 @@ for i in range(len(y_data)):
     Correct label: Road work-25
     Predicted label: Road work-25
     Result:  True
-    
+
     Correct label: Road work-25
     Predicted label: Road work-25
     Result:  True
-    
+
     Correct label: Go straight or right-36
     Predicted label: Go straight or right-36
     Result:  True
-    
+
     Correct label: No entry-17
     Predicted label: No entry-17
     Result:  True
-    
+
     Correct label: Speed limit (20km/h)-0
     Predicted label: Speed limit (20km/h)-0
     Result:  True
-    
+
     Correct label: Speed limit (30km/h)-1
     Predicted label: Speed limit (30km/h)-1
     Result:  True
-    
+
     Correct label: No entry-17
     Predicted label: No entry-17
     Result:  True
-    
+
     Correct label: Speed limit (80km/h)-5
     Predicted label: Speed limit (20km/h)-0
     Result:  False
-    
+
     Correct label: Speed limit (60km/h)-3
     Predicted label: Speed limit (60km/h)-3
     Result:  True
-    
+
     Correct label: Speed limit (30km/h)-1
     Predicted label: Speed limit (30km/h)-1
     Result:  True
-    
+
     Correct label: Speed limit (100km/h)-7
     Predicted label: Speed limit (100km/h)-7
     Result:  True
-    
+
     Correct label: Keep right-38
     Predicted label: Keep right-38
     Result:  True
-    
+
     Correct label: Priority road-12
     Predicted label: Yield-13
     Result:  False
-    
+
     Correct label: Yield-13
     Predicted label: Yield-13
     Result:  True
-    
+
     Correct label: General caution-18
     Predicted label: General caution-18
     Result:  True
-    
-    
+
+
 
 ### Analyze Performance
 
 
 ```python
-### Calculate the accuracy for these 5 new images. 
+### Calculate the accuracy for these 5 new images.
 ### For example, if the model predicted 1 out of 5 signs correctly, it's 20% accurate on these new images.
 with tf.Session() as sess:
     saver.restore(sess, './Three_stages_aug_rgb')
@@ -1710,11 +1710,11 @@ with tf.Session() as sess:
 ```
 
     Accuracy of all unknown image-recognition = 86%
-    
+
 
 ### Output Top 5 Softmax Probabilities For Each Image Found on the Web
 
-For each of the new images, print out the model's softmax probabilities to show the **certainty** of the model's predictions (limit the output to the top 5 probabilities for each image). [`tf.nn.top_k`](https://www.tensorflow.org/versions/r0.12/api_docs/python/nn.html#top_k) could prove helpful here. 
+For each of the new images, print out the model's softmax probabilities to show the **certainty** of the model's predictions (limit the output to the top 5 probabilities for each image). [`tf.nn.top_k`](https://www.tensorflow.org/versions/r0.12/api_docs/python/nn.html#top_k) could prove helpful here.
 
 The example below demonstrates how tf.nn.top_k can be used to find the top k predictions for each image.
 
@@ -1754,7 +1754,7 @@ Looking just at the first row we get `[ 0.34763842,  0.24879643,  0.12789202]`, 
 
 
 ```python
-### Print out the top five softmax probabilities for the predictions on the German traffic sign images found on the web. 
+### Print out the top five softmax probabilities for the predictions on the German traffic sign images found on the web.
 ### Feel free to use as many code cells as needed.
 
 with tf.Session() as sess:
@@ -1864,6 +1864,3 @@ for i, image in enumerate(im_data):
  Provided for you below is the function code that allows you to get the visualization output of any tensorflow weight layer you want. The inputs to the function should be a stimuli image, one used during training or a new one you provided, and then the tensorflow variable name that represents the layer's state during the training process, for instance if you wanted to see what the [LeNet lab's](https://classroom.udacity.com/nanodegrees/nd013/parts/fbf77062-5703-404e-b60c-95b78b2f3f9e/modules/6df7ae49-c61c-4bb2-a23e-6527e69209ec/lessons/601ae704-1035-4287-8b11-e2c2716217ad/concepts/d4aca031-508f-4e0b-b493-e7b706120f81) feature maps looked like for it's second convolutional layer you could enter conv2 as the tf_activation variable.
 
 For an example of what feature map outputs look like, check out NVIDIA's results in their paper [End-to-End Deep Learning for Self-Driving Cars](https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/) in the section Visualization of internal CNN State. NVIDIA was able to show that their network's inner weights had high activations to road boundary lines by comparing feature maps from an image with a clear path to one without. Try experimenting with a similar test to show that your trained network's weights are looking for interesting features, whether it's looking at differences in feature maps from images with or without a sign, or even what feature maps look like in a trained network vs a completely untrained one on the same sign image.
-
-
-
