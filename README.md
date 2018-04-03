@@ -197,7 +197,7 @@ plt.show()
 
 
 
-![png](output_11_2.png)
+![png](readme-pics/output_11_2.png)
 
 
 
@@ -205,7 +205,7 @@ plt.show()
 
 
 
-![png](output_11_4.png)
+![png](readme-pics/output_11_4.png)
 
 
 ### Data Set Summary & Exploration
@@ -242,63 +242,63 @@ for label in labels:
 ```
 
 
-![png](output_14_0.png)
+![png](readme-pics/output_14_0.png)
 
 
 
-![png](output_14_1.png)
+![png](readme-pics/output_14_1.png)
 
 
 
-![png](output_14_2.png)
+![png](readme-pics/output_14_2.png)
 
 
 
-![png](output_14_3.png)
+![png](readme-pics/output_14_3.png)
 
 
 
-![png](output_14_4.png)
+![png](readme-pics/output_14_4.png)
 
 
 
-![png](output_14_5.png)
+![png](readme-pics/output_14_5.png)
 
 
 
-![png](output_14_6.png)
+![png](readme-pics/output_14_6.png)
 
 
 
-![png](output_14_7.png)
+![png](readme-pics/output_14_7.png)
 
 
 
-![png](output_14_8.png)
+![png](readme-pics/output_14_8.png)
 
 
 
-![png](output_14_9.png)
+![png](readme-pics/output_14_9.png)
 
 
 
-![png](output_14_10.png)
+![png](readme-pics/output_14_10.png)
 
 
 
-![png](output_14_11.png)
+![png](readme-pics/output_14_11.png)
 
 
 
-![png](output_14_12.png)
+![png](readme-pics/output_14_12.png)
 
 
 
-![png](output_14_13.png)
+![png](readme-pics/output_14_13.png)
 
 
 
-![png](output_14_14.png)
+![png](readme-pics/output_14_14.png)
 
 
 ----
@@ -426,7 +426,7 @@ plt.savefig('Normalisation.jpg', bbox_inches='tight')
 ```
 
 
-![png](output_22_0.png)
+![png](readme-pics/output_22_0.png)
 
 
 
@@ -434,7 +434,7 @@ plt.savefig('Normalisation.jpg', bbox_inches='tight')
 
 
 
-![png](output_22_2.png)
+![png](readme-pics/output_22_2.png)
 
 
 
@@ -442,7 +442,7 @@ plt.savefig('Normalisation.jpg', bbox_inches='tight')
 
 
 
-![png](output_22_4.png)
+![png](readme-pics/output_22_4.png)
 
 
 
@@ -568,7 +568,7 @@ plt.savefig('/home/carnd/Traffic-Sign-Classifier/original.jpg')
 ```
 
 
-![png](output_36_0.png)
+![png](readme-pics/output_36_0.png)
 
 
 
@@ -585,7 +585,7 @@ plt.savefig('/home/carnd/Traffic-Sign-Classifier/brightness_augmented.jpg')
 ```
 
 
-![png](output_37_0.png)
+![png](readme-pics/output_37_0.png)
 
 
 
@@ -602,7 +602,7 @@ plt.savefig('/home/carnd/Traffic-Sign-Classifier/rotation.jpg')
 ```
 
 
-![png](output_38_0.png)
+![png](readme-pics/output_38_0.png)
 
 
 
@@ -619,7 +619,7 @@ plt.savefig('/home/carnd/Traffic-Sign-Classifier/Transalation.jpg')
 ```
 
 
-![png](output_39_0.png)
+![png](readme-pics/output_39_0.png)
 
 
 
@@ -636,7 +636,7 @@ plt.savefig('/home/carnd/Traffic-Sign-Classifier/Affine_Transformation.jpg')
 ```
 
 
-![png](output_40_0.png)
+![png](readme-pics/output_40_0.png)
 
 
 
@@ -719,7 +719,7 @@ print('Images are preprocessed.')
 
 
 ### Model Architecture
-![Capture.PNG](attachment:Capture.PNG)
+
 
 
 
@@ -966,511 +966,7 @@ with tf.Session() as sess:
 
     saver.save(sess, './Three_stages_aug_rgb')
     print("Model is saved")
-```
 
-    The Training is in progression...
-
-    This is not a balanced dataset:
-    Train Accuracy = 63.999%
-    Validation Accuracy = 80.930%
-    EPOCH 1 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 74.847%
-    Validation Accuracy = 92.925%
-    EPOCH 2 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 83.375%
-    Validation Accuracy = 94.308%
-    EPOCH 3 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 86.658%
-    Validation Accuracy = 95.646%
-    EPOCH 4 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 89.642%
-    Validation Accuracy = 96.440%
-    EPOCH 5 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 90.556%
-    Validation Accuracy = 96.939%
-    EPOCH 6 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 89.852%
-    Validation Accuracy = 97.052%
-    EPOCH 7 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 92.977%
-    Validation Accuracy = 97.324%
-    EPOCH 8 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 94.200%
-    Validation Accuracy = 96.939%
-    EPOCH 9 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 95.702%
-    Validation Accuracy = 97.823%
-    EPOCH 10 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 94.392%
-    Validation Accuracy = 97.937%
-    EPOCH 11 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 95.089%
-    Validation Accuracy = 97.823%
-    EPOCH 12 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 95.794%
-    Validation Accuracy = 97.483%
-    EPOCH 13 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 93.641%
-    Validation Accuracy = 97.755%
-    EPOCH 14 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 96.353%
-    Validation Accuracy = 97.732%
-    EPOCH 15 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 96.168%
-    Validation Accuracy = 98.163%
-    EPOCH 16 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 97.040%
-    Validation Accuracy = 97.778%
-    EPOCH 17 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 97.432%
-    Validation Accuracy = 98.186%
-    EPOCH 18 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 95.748%
-    Validation Accuracy = 98.481%
-    EPOCH 19 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 95.992%
-    Validation Accuracy = 97.891%
-    EPOCH 20 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 96.458%
-    Validation Accuracy = 97.483%
-    EPOCH 21 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 96.353%
-    Validation Accuracy = 97.415%
-    EPOCH 22 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 97.032%
-    Validation Accuracy = 97.914%
-    EPOCH 23 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 97.029%
-    Validation Accuracy = 97.937%
-    EPOCH 24 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 97.836%
-    Validation Accuracy = 97.959%
-    EPOCH 25 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 97.523%
-    Validation Accuracy = 97.800%
-    EPOCH 26 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.145%
-    Validation Accuracy = 97.846%
-    EPOCH 27 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.006%
-    Validation Accuracy = 98.345%
-    EPOCH 28 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 97.089%
-    Validation Accuracy = 98.481%
-    EPOCH 29 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 97.713%
-    Validation Accuracy = 98.231%
-    EPOCH 30 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.355%
-    Validation Accuracy = 98.345%
-    EPOCH 31 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 97.219%
-    Validation Accuracy = 98.594%
-    EPOCH 32 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.019%
-    Validation Accuracy = 97.528%
-    EPOCH 33 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.070%
-    Validation Accuracy = 97.891%
-    EPOCH 34 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.415%
-    Validation Accuracy = 98.345%
-    EPOCH 35 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 97.379%
-    Validation Accuracy = 98.435%
-    EPOCH 36 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.111%
-    Validation Accuracy = 98.231%
-    EPOCH 37 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 97.964%
-    Validation Accuracy = 98.571%
-    EPOCH 38 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.504%
-    Validation Accuracy = 98.707%
-    EPOCH 39 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 97.950%
-    Validation Accuracy = 98.639%
-    EPOCH 40 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.082%
-    Validation Accuracy = 98.458%
-    EPOCH 41 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.256%
-    Validation Accuracy = 98.073%
-    EPOCH 42 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.555%
-    Validation Accuracy = 98.662%
-    EPOCH 43 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.507%
-    Validation Accuracy = 98.231%
-    EPOCH 44 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 97.767%
-    Validation Accuracy = 98.571%
-    EPOCH 45 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.667%
-    Validation Accuracy = 98.073%
-    EPOCH 46 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 98.113%
-    Validation Accuracy = 98.390%
-    EPOCH 47 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.315%
-    Validation Accuracy = 98.254%
-    EPOCH 48 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.685%
-    Validation Accuracy = 98.005%
-    EPOCH 49 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.960%
-    Validation Accuracy = 98.413%
-    EPOCH 50 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.159%
-    Validation Accuracy = 98.390%
-    EPOCH 51 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.101%
-    Validation Accuracy = 98.186%
-    EPOCH 52 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.329%
-    Validation Accuracy = 98.435%
-    EPOCH 53 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.430%
-    Validation Accuracy = 98.503%
-    EPOCH 54 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.231%
-    Validation Accuracy = 98.163%
-    EPOCH 55 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.955%
-    Validation Accuracy = 98.163%
-    EPOCH 56 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.122%
-    Validation Accuracy = 98.254%
-    EPOCH 57 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.305%
-    Validation Accuracy = 98.345%
-    EPOCH 58 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.247%
-    Validation Accuracy = 98.571%
-    EPOCH 59 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 98.258%
-    Validation Accuracy = 98.413%
-    EPOCH 60 ...
-
-    This is not a balanced dataset:
-    Learning rate:  0.0001
-    Train Accuracy = 98.701%
-    Validation Accuracy = 98.503%
-    EPOCH 61 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.856%
-    Validation Accuracy = 98.390%
-    EPOCH 62 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 98.967%
-    Validation Accuracy = 98.481%
-    EPOCH 63 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.259%
-    Validation Accuracy = 98.481%
-    EPOCH 64 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 98.747%
-    Validation Accuracy = 98.662%
-    EPOCH 65 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 98.919%
-    Validation Accuracy = 98.594%
-    EPOCH 66 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.486%
-    Validation Accuracy = 98.526%
-    EPOCH 67 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.536%
-    Validation Accuracy = 98.526%
-    EPOCH 68 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.570%
-    Validation Accuracy = 98.549%
-    EPOCH 69 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 98.995%
-    Validation Accuracy = 98.639%
-    EPOCH 70 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 99.054%
-    Validation Accuracy = 98.707%
-    EPOCH 71 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.616%
-    Validation Accuracy = 98.617%
-    EPOCH 72 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.141%
-    Validation Accuracy = 98.549%
-    EPOCH 73 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.443%
-    Validation Accuracy = 98.526%
-    EPOCH 74 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.468%
-    Validation Accuracy = 98.413%
-    EPOCH 75 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.553%
-    Validation Accuracy = 98.435%
-    EPOCH 76 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.654%
-    Validation Accuracy = 98.526%
-    EPOCH 77 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.250%
-    Validation Accuracy = 98.639%
-    EPOCH 78 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.570%
-    Validation Accuracy = 98.549%
-    EPOCH 79 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 99.087%
-    Validation Accuracy = 98.730%
-    EPOCH 80 ...
-
-    This is not a balanced dataset:
-    Learning rate:  1e-05
-    Train Accuracy = 99.477%
-    Validation Accuracy = 98.639%
-    EPOCH 81 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.615%
-    Validation Accuracy = 98.639%
-    EPOCH 82 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.267%
-    Validation Accuracy = 98.549%
-    EPOCH 83 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.651%
-    Validation Accuracy = 98.571%
-    EPOCH 84 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 99.118%
-    Validation Accuracy = 98.685%
-    EPOCH 85 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 99.142%
-    Validation Accuracy = 98.730%
-    EPOCH 86 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.236%
-    Validation Accuracy = 98.594%
-    EPOCH 87 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 99.144%
-    Validation Accuracy = 98.685%
-    EPOCH 88 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.644%
-    Validation Accuracy = 98.662%
-    EPOCH 89 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.560%
-    Validation Accuracy = 98.617%
-    EPOCH 90 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.579%
-    Validation Accuracy = 98.617%
-    EPOCH 91 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.290%
-    Validation Accuracy = 98.594%
-    EPOCH 92 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 99.113%
-    Validation Accuracy = 98.639%
-    EPOCH 93 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.667%
-    Validation Accuracy = 98.662%
-    EPOCH 94 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.677%
-    Validation Accuracy = 98.639%
-    EPOCH 95 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.296%
-    Validation Accuracy = 98.639%
-    EPOCH 96 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.322%
-    Validation Accuracy = 98.571%
-    EPOCH 97 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.328%
-    Validation Accuracy = 98.549%
-    EPOCH 98 ...
-
-    This is a Balanced dataset:
-    Train Accuracy = 99.120%
-    Validation Accuracy = 98.662%
-    EPOCH 99 ...
-
-    This is not a balanced dataset:
-    Train Accuracy = 99.335%
-    Validation Accuracy = 98.662%
-    EPOCH 100 ...
 
     Model is saved
 
@@ -1499,7 +995,7 @@ plt.savefig('/home/carnd/Traffic-Sign-Classifier/Accuracy.jpg')
 ```
 
 
-![png](output_63_0.png)
+![png](readme-pics/output_63_0.png)
 
 
 
@@ -1545,63 +1041,63 @@ for i, image in enumerate(im_data):
 ```
 
 
-![png](output_66_0.png)
+![png](readme-pics/output_66_0.png)
 
 
 
-![png](output_66_1.png)
+![png](readme-pics/output_66_1.png)
 
 
 
-![png](output_66_2.png)
+![png](readme-pics/output_66_2.png)
 
 
 
-![png](output_66_3.png)
+![png](readme-pics/output_66_3.png)
 
 
 
-![png](output_66_4.png)
+![png](readme-pics/output_66_4.png)
 
 
 
-![png](output_66_5.png)
+![png](readme-pics/output_66_5.png)
 
 
 
-![png](output_66_6.png)
+![png](readme-pics/output_66_6.png)
 
 
 
-![png](output_66_7.png)
+![png](readme-pics/output_66_7.png)
 
 
 
-![png](output_66_8.png)
+![png](readme-pics/output_66_8.png)
 
 
 
-![png](output_66_9.png)
+![png](readme-pics/output_66_9.png)
 
 
 
-![png](output_66_10.png)
+![png](readme-pics/output_66_10.png)
 
 
 
-![png](output_66_11.png)
+![png](readme-pics/output_66_11.png)
 
 
 
-![png](output_66_12.png)
+![png](readme-pics/output_66_12.png)
 
 
 
-![png](output_66_13.png)
+![png](readme-pics/output_66_13.png)
 
 
 
-![png](output_66_14.png)
+![png](readme-pics/output_66_14.png)
 
 
 ### Predict the Sign Type for Each Image
@@ -1793,63 +1289,63 @@ for i, image in enumerate(im_data):
 ```
 
 
-![png](output_74_0.png)
+![png](readme-pics/output_74_0.png)
 
 
 
-![png](output_74_1.png)
+![png](readme-pics/output_74_1.png)
 
 
 
-![png](output_74_2.png)
+![png](readme-pics/output_74_2.png)
 
 
 
-![png](output_74_3.png)
+![png](readme-pics/output_74_3.png)
 
 
 
-![png](output_74_4.png)
+![png](readme-pics/output_74_4.png)
 
 
 
-![png](output_74_5.png)
+![png](readme-pics/output_74_5.png)
 
 
 
-![png](output_74_6.png)
+![png](readme-pics/output_74_6.png)
 
 
 
-![png](output_74_7.png)
+![png](readme-pics/output_74_7.png)
 
 
 
-![png](output_74_8.png)
+![png](readme-pics/output_74_8.png)
 
 
 
-![png](output_74_9.png)
+![png](readme-pics/output_74_9.png)
 
 
 
-![png](output_74_10.png)
+![png](readme-pics/output_74_10.png)
 
 
 
-![png](output_74_11.png)
+![png](readme-pics/output_74_11.png)
 
 
 
-![png](output_74_12.png)
+![png](readme-pics/output_74_12.png)
 
 
 
-![png](output_74_13.png)
+![png](readme-pics/output_74_13.png)
 
 
 
-![png](output_74_14.png)
+![png](readme-pics/output_74_14.png)
 
 
 > **Note**: Once you have completed all of the code implementations and successfully answered each question above, you may finalize your work by exporting the iPython Notebook as an HTML document. You can do this by using the menu above and navigating to  \n",
